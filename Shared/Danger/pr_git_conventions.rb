@@ -1,5 +1,3 @@
-require 'danger'
-
 # Lint the GitHub PR title & body
 fail('PR is classed as Work in Progress') if github.pr_title.include? 'WIP'
 
