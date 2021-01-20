@@ -10,8 +10,8 @@ fail('Please start PR title with capital letter.') if first_char_in_pr_title != 
 fail('Please provide a link to the related Asana task in the PR body.') unless github.pr_body.include? 'https://app.asana.com/'
 
 # Check branch name
-unless github.branch_for_head.match(/(feature|fix)\/[a-z]{2}_[a-z\d-]{3,25}/)
-  fail('Please follow the branch name structure `<feature or fix>/<initials>_<dasherized-topic>`.')
+unless github.branch_for_head.match(/(work)\/[a-z]{2}_[a-z\d-]{3,25}/)
+  fail('Please follow the branch name structure `<work>/<initials>_<dasherized-topic>`.')
 end
 
 # Check commit messages for merge commits
