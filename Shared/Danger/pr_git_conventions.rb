@@ -7,7 +7,7 @@ fail('Please remove period from end of PR title.') if github.pr_title.split('').
 
 first_char_in_pr_title = github.pr_title.split('').first
 fail('Please start PR title with capital letter.') if first_char_in_pr_title != first_char_in_pr_title.upcase
-fail('Please provide a link to the related Asana task in the PR body.') unless github.pr_body.include? 'https://app.asana.com/'
+fail('Please provide a link to the related Jira task in the PR body.') unless github.pr_body.include? 'https://papershift.atlassian.net/'
 
 # Check branch name
 unless github.branch_for_head.match(/(work)\/[a-z]{2}_[a-z\d-]{3,25}/)
