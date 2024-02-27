@@ -10,7 +10,7 @@ fail('Please start PR title with capital letter.') if first_char_in_pr_title != 
 fail('Please provide a link to the related Jira task in the PR body.') unless github.pr_body.include? 'https://papershift.atlassian.net/'
 
 # Check branch name
-unless github.branch_for_head.match(/(work)\/[a-z]{2}_[a-z\d-]{3,25}/)
+unless (github.branch_for_head.match(/(work)\/[a-z]{2}_[a-z\d-]{3,25}/) or github.branch_for_head.match(/(release)\/[\d+\.\d+\.\d+]/))
   fail('Please follow the branch name structure `<work>/<initials>_<dasherized-topic>`.')
 end
 
